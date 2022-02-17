@@ -63,26 +63,69 @@
         }
 
     </style>
+    <script>
+        $(document).ready(function () {
+            show_post();
+        });
+
+        function show_post() {
+            $.ajax({
+                type: 'GET',
+                url: '/study_page_api',
+                data: {},
+                success: function (response) {
+                    let rows = response['post']
+                    for (let i = 0; i < rows.length; i++){
+                        let name = rows[i]['name']
+                        let title = rows[i]['title']
+                        let content = rows[i]['content']
+                        let on_off = rows[i]['on_off']
+                        let time = rows[i]['time']
+
+                        let temp_html = `<div class="study_page_post">
+                                            <a href="study_page_offline.html">
+                                                <div class="card border-dark mb-3" style="max-width: 18rem;">
+                                                    <div class="card-header">${on_off}</div>
+                                                    <div class="card-body text-dark">
+                                                        <h5 class="card-title">${title}</h5>
+                                                        <p class="time">${time}</p>
+                                                        <p class="card-text">${content}</p>
+                                                    </div>
+                                                    <div class="card-footer bg-transparent border-dark">${name}</div>
+                                                </div>
+                                            </a>
+                                        </div>`
+
+                        $('#study_page_post_box').append(temp_html)
+                    }
+
+                }
+            });
+        }
+    </script>
 </head>
 <body>
     <div class="study_page_wrap">
         <div class="study_page_title">
             <h1>온,오프라인 스터디</h1>
         </div>
-        <div class="study_page_post_wrap">
-            <div class="study_page_post">
-                <a href="study_page_offline.html">
-                    <div class="card border-dark mb-3" style="max-width: 18rem;">
-                        <div class="card-header">온라인/오프라인</div>
-                        <div class="card-body text-dark">
-                            <h5 class="card-title">게시물 제목</h5>
-                            <p class="time">시간</p>
-                            <p class="card-text">게시물 내용 게시물 내용 게시물 내용 게시물 내용 게시물 내용 게시물 내용 게시물 내용 게시물 내용 게시물 내용 게시물 내용</p>
+        <div class="study_page_post_wrap" >
+            <div id="study_page_post_box">
+                <div class="study_page_post">
+                    <a href="study_page_offline.html">
+                        <div class="card border-dark mb-3" style="max-width: 18rem;">
+                            <div class="card-header">온라인/오프라인</div>
+                            <div class="card-body text-dark">
+                                <h5 class="card-title">게시물 제목</h5>
+                                <p class="time">시간</p>
+                                <p class="card-text">게시물 내용 게시물 내용 게시물 내용 게시물 내용 게시물 내용 게시물 내용 게시물 내용 게시물 내용 게시물 내용 게시물 내용</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-dark">작성자</div>
                         </div>
-                        <div class="card-footer bg-transparent border-dark">작성자</div>
-                    </div>
-                </a>
+                    </a>
+                </div>
             </div>
+
             <button onclick="history.back()" type="button" class="btn btn-outline-dark" style="width: 90px;">뒤로가기</button>
         </div>
 
