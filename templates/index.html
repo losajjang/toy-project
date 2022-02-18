@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <title>스파르타 스터디</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Noto Serif KR', serif;
+        }
+
+        .main {
+            margin: auto;
+            width: 400px;
+            /*height: 610px;*/
+            border: 3px solid lightgray;
+            border-radius: 8px;
+            padding-bottom: 20px;
+            margin-top: 30px;
+        }
+
+        .mytitle {
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg');
+            background-position: center;
+            background-size: cover;
+            color: white;
+            width: 350px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto 15px auto;
+            border-radius: 6px;
+        }
+
+        .mytitle > h1 {
+            font-size: 45px;
+        }
+
+        .mybtn {
+            width: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 15px auto 0px auto;
+            border: 2px solid lightgray;
+            border-radius: 6px;
+            padding-bottom: 15px;
+        }
+
+        .mybtn > button, a {
+            width: 250px;
+            height: 60px;
+            margin: 15px auto 0px auto;
+            font-size: 17px;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="mytitle">
+            <h1>스파르타 스터디</h1>
+        </div>
+        <div class="mybtn">
+            <button type="button" class="btn btn-outline-secondary" onclick="location.href='offline.html'">오프라인 스터디 찾기</button>
+            <button type="button" class="btn btn-outline-secondary">온라인 스터디 찾기</button>
+            <button type="button" class="btn btn-outline-secondary">온, 오프라인 스터디 찾기</button>
+            <button type="button" class="btn btn-outline-secondary">스터디 모집하기</button>
+        </div>
+    </div>
+</body>
+
+</html>
